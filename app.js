@@ -1,14 +1,16 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const pokemonRoutes = require('./routes/pokemonRoutes');
+const treinadorRoutes = require('./routes/treinadorRoutes');
 
 const app = express();
 app.set('view engine', 'ejs');
-app.set('viewss', './views');
-app.use(bodyParser.urlencoded({extended: true}));
+app.set('views', './views');
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use('/', pokemonRoutes)
+app.use('/pokemons', pokemonRoutes);
+app.use('/treinadores', treinadorRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

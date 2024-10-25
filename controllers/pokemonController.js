@@ -3,7 +3,7 @@ const pokemonModel = require('../models/pokemonModel');
 
 const getAllPokemons = (req, res) => {
     const pokemons = pokemonModel.getPokemons();
-    res.render('index', { pokemons });
+    res.render('pokedex', { pokemons });
 }
 
 
@@ -15,4 +15,15 @@ const getPokemon = (req, res) => {
         res.status(404).send('Pokemon não encontrado')
     }
 };
-module.exports = {getAllPokemons,getPokemon};
+
+const createPokemon = (req, res) => {
+    const { nome, tipo } = req.body; 
+    if (!nome || !tipo) {
+        return res.status(400).send('Nome e tipo são obrigatórios');
+    }
+    
+    const newPokemon = pokemonModel.createPokemon(nome, tipo); 
+    res.redirect('/pokemons'); 
+};
+
+module.exports = {getAllPokemons,getPokemon, createPokemon };

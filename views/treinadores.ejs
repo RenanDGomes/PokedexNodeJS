@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Treinadores</title>
+    <link rel="stylesheet" href="/styleTreinadores.css">
+</head>
+<body>
+    <h1>Treinadores</h1>
+
+    <form action="/treinadores" method="POST" style="margin-bottom: 20px;">
+        <input type="text" name="nome" placeholder="Nome do Treinador" required>
+        <input type="text" name="nivel" placeholder="Nivel do Treinador" required>
+        <button type="submit">Adicionar Treinador</button>
+    </form>
+
+    <ul>
+        <% treinadores.forEach(function(treinador){ %>
+            <li>
+                <a href="/treinadores/<%= treinador.id %>"><%= treinador.nome %></a> - <%= treinador.tipo %>
+            </li>
+       <% }); %>
+    </ul>
+</body>
+</html>
