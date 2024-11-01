@@ -1,94 +1,82 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #8aec2f, #9fff18);
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    padding: 20px;
 }
 
 h1 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    font-size: 4em;
-    margin-bottom: 20px;
-    animation: bounce 1s infinite alternate;
+    text-align: center;
+    color: #007bff;
 }
 
-/* Estilização do formulário */
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-input {
+input[type="text"] {
+    width: 300px;
     padding: 10px;
     margin: 5px 0;
-    border: 2px solid #fff; /* Borda branca para contraste */
-    border-radius: 5px;
-    font-size: 1em;
-    width: 300px; /* Largura do input */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #19a447; /* Cor do botão */
-    color: #fff; /* Texto branco */
-    border: none; /* Remove borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor pointer ao passar o mouse */
-    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #099c2e; /* Cor ao passar o mouse */
+    background-color: #0056b3;
 }
 
-/* Lista de treinadores */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
-    background-color: #fff;
-    border-radius: 8px;
+ul li {
+    background: #ffffff;
     margin: 10px 0;
-    padding: 15px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-li:hover {
-    transform: scale(1.05);
-    background-color: #19a447;
-    color: #fff;
+ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
 }
 
 a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
     text-decoration: none;
-    color: inherit;
     font-weight: bold;
-    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: #099c2e;
-}
-
-@keyframes bounce {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-10px);
-    }
+    text-decoration: underline;
 }

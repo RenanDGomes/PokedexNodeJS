@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title><%= treinador.nome %></title>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+
 </head>
 <body>
     <h1><%= treinador.nome%></h1>
     <p>Nivel: <%= treinador.nivel %></p>
+    <h2>Pokédex:</h2>
+    <ul>
+        <% treinador.pokedex.forEach(function(pokemon) { %>
+            <li><%= pokemon.nome %> - <%= pokemon.tipo %></li>
+        <% }) %>
+    </ul>
+    <h2>Adicionar Pokémon à Pokédex</h2>
+    <form action="/<%= treinador.id %>/addPokemon" method="POST">
+        <input type="hidden" name="treinadorId" value="<%= treinador.id %>"> 
+        <select name="pokemonId" required>
+            <% pokemons.forEach(function(pokemon) { %>
+                <option value="<%= pokemon.id %>"><%= pokemon.nome %> - <%= pokemon.tipo %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Adicionar</button>
+    </form>
     <a href="/">Voltar aos Treinadores</a>
-    
 </body>
 </html>

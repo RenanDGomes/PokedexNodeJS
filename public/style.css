@@ -1,21 +1,65 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #8aec2f, #9fff18);
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-h1 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    font-size: 4em;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa); /* Gradiente de fundo */
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #4A90E2; /* Azul forte */
+    text-align: center;
     margin-bottom: 20px;
-    animation: bounce 1s infinite alternate;
+    font-weight: 700;
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto 30px auto; /* Centraliza o formulário */
+    background: #fff; /* Fundo branco para o formulário */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+input[type="text"],
+select {
+    padding: 10px;
+    border: 2px solid #4A90E2; /* Borda azul */
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Ajusta a largura para incluir preenchimento e borda */
+    margin-bottom: 10px; /* Espaço entre os campos */
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #FF6347; /* Borda vermelha quando em foco */
+    outline: none; /* Remove o contorno padrão */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animação suave */
+}
+
+button:hover {
+    background-color: #45a049; /* Verde mais escuro */
+    transform: scale(1.05); /* Leve aumento no botão ao passar o mouse */
 }
 
 ul {
@@ -24,38 +68,46 @@ ul {
 }
 
 li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
     background-color: #fff;
-    border-radius: 8px;
-    margin: 10px 0;
-    padding: 15px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s; /* Animação de fundo */
 }
 
 li:hover {
-    transform: scale(1.05);
-    background-color: #19a447;
-    color: #fff;
+    background-color: #f0f8ff; /* Fundo claro ao passar o mouse */
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #4A90E2; /* Azul */
     font-weight: bold;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.3s; /* Transição suave de cor */
 }
 
 a:hover {
-    color: #099c2e;
+    color: #FF6347; /* Cor vermelha ao passar o mouse */
 }
 
-@keyframes bounce {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-10px);
+a[href="/"] {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #4A90E2; /* Cor para o link para treinadores */
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #999; /* Cor de texto para o rodapé */
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 90%; /* Ajusta a largura do formulário em telas pequenas */
     }
 }
