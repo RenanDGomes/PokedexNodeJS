@@ -2,10 +2,10 @@ const treinadorModel = require('../models/treinadorModel');
 
 const getAllTreinadores = (req, res) => {
     const treinadores = treinadorModel.getTreinadores();
-    res.render('treinadores', { treinadores });  // Certifique-se de que 'treinadores' é o nome correto do arquivo de visualização
+    res.render('treinadores', { treinadores });  
 };
 
-const getTreinador = (req, res) => {  // Corrigido o nome da função
+const getTreinador = (req, res) => {  
     const treinador = treinadorModel.getTreinadorById(req.params.id);
     if (treinador) {
         res.render('treinador', { treinador });
@@ -21,7 +21,7 @@ const createTreinador = (req, res) => {
     }
     
     const newTreinador = treinadorModel.createTreinador(nome, nivel); 
-    res.redirect('/treinadores'); 
+    res.redirect('/'); 
 };
 
 module.exports = { getAllTreinadores, getTreinador, createTreinador };

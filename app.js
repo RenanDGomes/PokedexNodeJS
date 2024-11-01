@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.use('/pokemons', pokemonRoutes);
-app.use('/treinadores', treinadorRoutes);
+app.use('/', treinadorRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

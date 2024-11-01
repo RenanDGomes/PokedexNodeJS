@@ -7,7 +7,6 @@ const treinadores = [
 const getTreinadores = () => treinadores;
 const getTreinadorById = (id) => treinadores.find(t => t.id == parseInt(id));
 
-// Função atualizada para criar treinador
 const createTreinador = (nome, nivel) => {
     const newTreinador = {
         id: treinadores.length + 1,
