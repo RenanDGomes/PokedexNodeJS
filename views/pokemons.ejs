@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémons</title>
+</head>
+<body>
+    <h1>Mundo dos Pokémons</h1>
+
+    <form action="/pokemons" method="POST" style="margin-bottom: 20px;">
+        <input type="text" name="nome" placeholder="Nome do Pokémon" required>
+        <input type="text" name="tipo" placeholder="Tipo do Pokémon" required>
+        <button type="submit">Adicionar Pokémon</button>
+    </form>
+
+    <ul>
+        <% pokemons.forEach(function(pokemon) { %>
+            <li>
+                <a href="/pokemons/<%= pokemon.id %>"><%= pokemon.nome %></a> - <%= pokemon.tipo %>
+            </li>
+        <% }); %>
+    </ul>
+
+    <a href="/treinadores">Mundo dos Treinadores</a>
+</body>
+</html>

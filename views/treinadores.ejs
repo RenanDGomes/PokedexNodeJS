@@ -2,27 +2,25 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Treinadores</title>
-    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>Mundo dos Treinadores</title>
 </head>
 <body>
-    <h1>Treinadores</h1>
+    <h1>Mundo dos Treinadores</h1>
 
-    <form action="/" method="POST" style="margin-bottom: 20px;">
+    <form action="/treinadores" method="POST" style="margin-bottom: 20px;">
         <input type="text" name="nome" placeholder="Nome do Treinador" required>
-        <input type="text" name="nivel" placeholder="Nivel do Treinador" required>
+        <input type="text" name="nivel" placeholder="Nível do Treinador" required>
         <button type="submit">Adicionar Treinador</button>
     </form>
 
     <ul>
-        <% treinadores.forEach(function(treinador){ %>
+        <% treinadores.forEach(function(treinador) { %>
             <li>
-                <a href="/<%= treinador.id %>"><%= treinador.nome %></a> - <%= treinador.nivel %>
+                <a href="/treinadores/<%= treinador.id %>"><%= treinador.nome %></a> - Nível: <%= treinador.nivel %>
             </li>
-       <% }); %>
+        <% }); %>
     </ul>
-    <a href="/pokemons">Mundo dos Pokemons</a>
 
-
+    <a href="/pokemons">Mundo dos Pokémons</a>
 </body>
 </html>
