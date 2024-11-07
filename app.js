@@ -3,9 +3,13 @@ const { sequelize } = require('./models');
 const treinadorRoutes = require('./routes/treinadorRoutes');
 const pokemonRoutes = require('./routes/pokemonRoutes');
 const path = require('path');
+const methodOverride = require('method-override');
+
 
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+app.use(methodOverride('_method'));
 
 // Middleware para dados JSON e formulário
 app.use(express.json());
@@ -14,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // Configuração do EJS e views
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 
 // Rotas
 app.use('/treinadores', treinadorRoutes);

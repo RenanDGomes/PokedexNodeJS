@@ -1,4 +1,3 @@
-// controllers/treinadorController.js
 const { Treinador, Pokemon, sequelize } = require('../models');
 
 exports.getAllTreinadores = async (req, res) => {
@@ -19,6 +18,21 @@ exports.createTreinador = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send({ error: 'Erro ao criar treinador' });
+    }
+};
+
+exports.deleteTreinador = async (req, res) => {
+    try {
+        const treinadorId = req.params.id;
+        const treinador = await Treinador.findByPk(treinadorId)
+        if (!treinador) {
+            return res.status(404).send('Treinador não encontrado');
+        }
+        await treinador.destroy();
+        res.redirect('/treinadores'); 
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ error: 'Erro ao deletar treinador' });
     }
 };
 
@@ -50,8 +64,6 @@ exports.getTreinadorById = async (req, res) => {
     }
 };
 
-
-
 exports.addPokemonToTreinador = async (req, res) => {
     const { id } = req.params;
     const { pokemonId } = req.body;
@@ -78,4 +90,5 @@ exports.addPokemonToTreinador = async (req, res) => {
         console.error(error);
         res.status(500).send({ error: 'Erro ao adicionar Pokémon' });
     }
+
 };

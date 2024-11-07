@@ -20,7 +20,11 @@
                 <option value="<%= pokemon.id %>"><%= pokemon.nome %> - <%= pokemon.tipo %></option>
             <% }) %>
         </select>
-        <button type="submit">Adicionar</button>
+        <button type="submit">Adicionar Pokemon</button>
+    </form>
+
+    <form action="/treinadores/<%= treinador.id %>?_method=DELETE" method="POST">
+        <button type="submit">Deletar Treinador</button>
     </form>
     <a href="/treinadores">Voltar aos Treinadores</a>
 </body>

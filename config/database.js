@@ -1,8 +1,14 @@
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('apipokedex', 'postgres', 'camaro01', {
-  host: '127.0.0.1',
-  dialect: 'postgres'
+
+const sequelize = new Sequelize('postgresql://api-homolog_owner:oHQgbPWu4i6S@ep-round-sky-a57j8tcy.us-east-2.aws.neon.tech/api-homolog', {
+  dialect: 'postgres',
+  ssl: true,  
+  dialectOptions: {
+    ssl: {
+      require: true,    
+      rejectUnauthorized: false 
+    }
+  }
 });
 
 module.exports = sequelize;
-
